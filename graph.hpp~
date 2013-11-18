@@ -1,0 +1,93 @@
+#ifndef GRAPH
+#define GRAPH
+
+//#define DEBUG
+
+// #define HEAP
+
+#include <vector>
+
+namespace Graph
+{
+  class Vertex;
+
+  class Edge
+  {
+    int Weight;
+    Vertex* From;
+    Vertex* To;
+  public:
+    Edge();
+    Edge(Vertex*,Vertex*,int);
+    ~Edge();
+    int getWeight() const;
+    Vertex* getFrom();
+    Vertex* getTo();
+    void setWeight(int);
+    void setFrom(Vertex*);
+    void setTo(Vertex*);
+
+  };
+  
+  class Vertex
+  {
+    int Name;
+    int Key;
+    Vertex* parentPointer;
+    std::vector<Edge*> edges;
+  public:
+    Vertex();
+    Vertex(int);
+    ~Vertex();
+    int getName();
+    void setName(int);
+    int getKey();
+    void setKey(int);
+    Vertex* getParentPointer();
+    Vertex* getRoot();
+    void setParentPointer(Vertex*);
+    std::vector<Edge*> getEdges();
+    void setEdges(std::vector<Edge*>);
+    void addEdge(Edge*);
+      
+  };
+  
+  
+
+  class Graph
+  {
+    std::vector<Edge*> e;
+    std::vector<Vertex*> v;
+  public:
+    Graph();
+    Graph(int);
+    ~Graph();
+    void addEdge(int, int, int);
+    Vertex* getVertex(int);
+    void Clustering(int);
+    int BellFo(int);
+    int SSP();
+    std::vector< std::vector<Vertex*> > TSPEuclidRec(Vertex*);
+    friend bool Compare(const Edge*, const Edge*);
+   
+  };
+  
+  class Exception : public std::exception{
+  public:
+    enum ExceptionType
+      {
+	NEGATIVE_CYCLE
+      };
+    
+    virtual ExceptionType getExceptionType() const throw()
+    {
+      return NEGATIVE_CYCLE;
+    }
+    
+    virtual const char* what() throw() {return "NETATIVE_CYCLE"; }
+  };
+
+
+}
+
+#endif

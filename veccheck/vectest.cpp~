@@ -1,0 +1,19 @@
+#include <vector>
+#include <iostream>
+
+std::vector<int> testFun()
+{
+  std::vector<int> res;
+  return res;
+  
+}
+
+
+int main()
+{
+  std::vector <int> iv = testFun();
+  iv.push_back(23);
+  for(std::vector<int>::iterator it = iv.begin();it!=iv.end();++it)
+    std::cout<<"iv = "<<(*it)<<std:endl;
+  return 0;
+}
