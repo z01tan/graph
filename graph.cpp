@@ -407,6 +407,13 @@ namespace Graph
 
       }
   }
+
+  std::vector<std::pair< std::vector<Vertex*>, double> > Graph::TSPEuclidIter(Vertex* curVer)
+  {
+    std::vector< std::pair<std::vector<Vertex*>, double> > pathacc;
+    
+    return pathacc;
+  }
   
   std::vector<std::pair<std::vector<Vertex*>, double> > Graph::TSPEuclid()
   {

@@ -88,6 +88,7 @@ namespace Graph
     int BellFo(int);
     int SSP();
     std::vector<std::pair< std::vector<Vertex*>, double> > TSPEuclidRec(Vertex*);
+    std::vector<std::pair< std::vector<Vertex*>, double> > TSPEuclidIter(Vertex*);
     std::vector<std::pair< std::vector<Vertex*>, double> > TSPEuclid();
 
     friend bool Compare(const Edge*, const Edge*);
