@@ -415,6 +415,14 @@ namespace Graph
     return pathacc;
   }
   
+  std::vector<std::pair< std::vector<Vertex*>, double> > Graph::TSPHeld_Karp()
+  {
+    std::vector< std::pair<std::vector<Vertex*>, double> > pathacc;
+    
+    return pathacc;
+    
+  }
+
   std::vector<std::pair<std::vector<Vertex*>, double> > Graph::TSPEuclid()
   {
     std::vector<std::pair<std::vector<Vertex*>, double> > acycle = TSPEuclidRec(getVertex(1));
